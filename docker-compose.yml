@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: mmoraisd
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: autentique
+    container_name: autentique-api
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - autentique
+
+networks:
+  autentique:
+    driver: bridge
