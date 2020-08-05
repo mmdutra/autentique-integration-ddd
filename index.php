@@ -9,8 +9,7 @@ require __DIR__ . "/bootstrap.php";
 $service = new DocumentService(new AutentiqueIntegration(new Client()));
 
 try {
-    $document = new \App\Domain\Document("Contracto", __DIR__ . "/storage/contract/teste.pdf");
-//    $document->addSigner(new \App\Domain\Signer("Mateus Morais", "mateus.morais.dev@gmail.com"));
+    $document = new \App\Domain\Document("Contrato", __DIR__ . "/storage/contract/teste.pdf");
     $response = $service->create($document);
     print_r($response);
 } catch (\Exception $ex) {
